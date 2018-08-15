@@ -127,6 +127,10 @@ class VerdaccioGithubAuth {
 
     if (teams !== false) {
       teams.push(forUser);
+
+      if (this.org.length > 0) {
+        teams.push('org:' + this.org)
+      }
     }
 
     this.teamCache[forUser] = {
